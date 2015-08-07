@@ -8,9 +8,11 @@
                 <p>Here are your contacts:</p>
                 <ul>
                     {% for contact in contacts %}
-                        <li>{{ contact.getName }}</li>
-                        <li>{{ contact.getNumber }}</li>
-                        <li>{{ contact.getAddress }}</li>
+                        <p>
+                            <li>{{ contact.getName }}</li>
+                            <li>{{ contact.getNumber }}</li>
+                            <li>{{ contact.getAddress }}</li>
+                        </p>
                     {% endfor %}
                 </ul>
             {% endif %}
@@ -20,12 +22,16 @@
             <input id='add_name' name="add_name" type="text">
 
             <label for='add_number'>NUMBER</label>
-            <input id='add_number' name="add_number" type="text">
+            <input id='add_number' name="add_number" type="number">
 
             <label for='add_address'>ADDRESS</label>
             <input id='add_address' name="add_address" type="text">
 
             <button type='submit'>ADD CONTACT</button>
+        </form>
+
+        <form action="/delete_contacts" method="post">
+            <button type='submit'>DELETE THEM ALL</button>
         </form>
 
     </body>
