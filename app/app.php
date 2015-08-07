@@ -56,6 +56,13 @@
         return $contact_app['twig']->render('create_contact.html.twig', array('newcontact' => $new_contact));
     });
 
+    // calls the post method on the $contact_app object and receives a URL path
+    // as its first argument, and a function that gives us access to the
+    // $contact_app variable. the method then deletes all the contact objects
+    // saved, using the contact class method deleteAll(). the method then
+    // returns the $contact_app  (using twig) and renders (using twig) the
+    // delete_contacts twig file
+
     $contact_app->post("/delete_contacts", function() use ($contact_app) {
         Contact::deleteAll();
         return $contact_app['twig']->render('delete_contacts.html.twig');
