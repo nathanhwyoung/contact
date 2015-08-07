@@ -1,8 +1,17 @@
 <html>
     <head>
-        <title></title>
+        <title>Contacts</title>
     </head>
     <body>
+        <h1>Contacts</h1>
+            {% if contacts is not empty%}
+                <p>Here are your contacts:</p>
+                <ul>
+                    {% for contact in contacts %}
+                        <li>{{ contact.getName }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
 
     </body>
 </html>
