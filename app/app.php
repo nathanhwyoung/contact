@@ -58,6 +58,7 @@
 
     $contact_app->post("/delete_contacts", function() use ($contact_app) {
         Contact::deleteAll();
+        return $contact_app['twig']->render('delete_tasks.html.twig');
     });
 
     return $contact_app;

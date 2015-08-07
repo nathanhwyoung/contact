@@ -9,9 +9,24 @@
                 <ul>
                     {% for contact in contacts %}
                         <li>{{ contact.getName }}</li>
+                        <li>{{ contact.getNumber }}</li>
+                        <li>{{ contact.getAddress }}</li>
                     {% endfor %}
                 </ul>
             {% endif %}
+
+        <form action='/contacts' method='post'>
+            <label for='add_name'>NAME</label>
+            <input id='add_name' name="add_name" type="text">
+
+            <label for='add_number'>NUMBER</label>
+            <input id='add_number' name="add_number" type="text">
+
+            <label for='add_address'>ADDRESS</label>
+            <input id='add_address' name="add_address" type="text">
+
+            <button type='submit'>ADD CONTACT</button>
+        </form>
 
     </body>
 </html>
