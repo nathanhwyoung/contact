@@ -1,4 +1,5 @@
 <?php
+
     class Contact
     {
         private $name;
@@ -42,9 +43,21 @@
             $this->address = $new_address;
         }
 
+        function save()
+        {
+            array_push($_SESSION['list_of_contacts'], $this);
+        }
+
+        static function getAll()
+        {
+            return $_SESSION['list_of_contacts'];
+        }
+
+        static function deleteAll()
+        {
+            $_SESSION['list_of_contacts'] = array();
+        }
+
     }
-
-
-
 
 ?>
